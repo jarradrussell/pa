@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>FullScreen Backgrounds - fullPage.js</title>
+	<meta name="author of fullscreen.js" content="Alvaro Trigo Lopez" />
+
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<!-- edit this one for style sheet  link rel="stylesheet" type="text/css" href="examples.css" /> --!>
+	<style>
+
+	/*screen resolutions between 620px and 800px*/
+	@media all and (min-width: 620px) and (max-width: 800px){
+		#section1 .imgsContainer{
+			margin-top: -278px;
+			margin-left: -685px;
+			width: 647px;
+			height: 563px;
+		}
+	}
+
+	/*screen resolutions lower than 620px*/
+	@media all and (max-width: 620px){
+		#section1 .imgsContainer{
+			margin-top: -208px;
+			margin-left: -516px;
+			width: 534px;
+			height: 464px;
+		}
+	}
+
+
+	body{
+		font-family: "American Typewriter";
+	font-size: 12px;
+	font-weight:normal;
+	color: #C09;
+	}
+
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1 {
+	font-family: "Copperplate Gothic Light";
+	color: #C09;
+	font-size: 24px;	
+	}
+	h2 {
+	font-family: "American Typewriter";
+	font-size: 18px;
+	font-weight:normal;
+	color: #C09;
+	}
+	h3 {
+	font-family: "Copperplate Gothic Light";
+	font-size: 16px;
+	color: #C09;
+	}
+	h4 {
+	font-family: "Copperplate Gothic Light";
+	font-size: 14px;
+	color: #C09;
+	text-align: right;		
+	}
+	p {
+	font-family: "American Typewriter";
+	font-size: 12px;
+	font-weight:normal;
+	color: #000;
+	}
+    p2 {
+	font-family: "American Typewriter";
+	font-size: 12px;
+	font-weight:normal;
+	color: #fff;
+	}
+
+
+
+	/* Common styles
+	* --------------------------------------- */
+	img{
+	    -webkit-transition: all 0.7s ease-out;
+		-moz-transition: all 0.7s ease-out;
+		-o-transition: all 0.7s ease-out;
+		transition: all 0.7s ease-out;
+	}
+	.section{
+		text-align:center;
+		overflow:hidden;
+	}
+	.wrap{
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.box{
+		text-align: left;
+		color: #808080;
+		font-size: 1.2em;
+		line-height: 1.6em;
+	}
+
+	#bigcard{
+	position: absolute;
+	width: 75%;
+	height:75%;
+	left: 12.5%;
+	top: 12.5%;
+	margin-right: 0;
+	margin-bottom: 0;
+	z-index:2;
+	background-color: #fff;
+	opacity: 0.85;
+	alignment-adjust:middle;
+	box-shadow: 0px 0px 15px #000000;
+	}
+
+
+
+	/* Section 0
+	* --------------------------------------- */
+	#card {
+	position: absolute;
+	width: 330px;
+	height:350px;
+	left: 50%;
+	top: 50%;
+	margin-left: -165px;
+	margin-top: -175px;
+	z-index:2;
+	background-color: #fff;
+	opacity: 0.85;
+	alignment-adjust:middle;
+	box-shadow: 0px 0px 15px #000000;
+	}
+	#logo { margin-top: 13px;}
+	#contactfooter {
+	position: absolute;
+	bottom: 1em ;
+	left: 2em;
+	z-index: 7;
+	font-family: "American Typewriter";
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 8px;
+	text-align: left;
+	}
+	#quickinfo {
+	position: absolute;
+	top: 73px;
+	font-family:"American Typewriter";
+	font-size: 9pt;
+	color: #333333;
+	opacity: 1;
+	margin: 20px;
+	overflow: hidden;
+	text-align: justify;
+	}
+	
+	#bg1 {
+		position:absolute;
+		left: 0;
+		top: 0;	
+		height: 100%;
+		width: 100%;
+	}
+	#section0 .imgsContainer{
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	/* Section 1
+	* --------------------------------------- */
+	#section1 img{
+		position:absolute;
+		left: 0;
+		top: 0;
+		
+	}
+	
+	#section1 .imgsContainer{
+	
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+	
+
+	/* Section 2
+	* --------------------------------------- */
+
+	#section2 .imgsContainer{
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+
+	/* Section 3
+	* --------------------------------------- */
+	#section3 img{
+		position:absolute;
+		left: 0 ;
+		top: 0 ;
+	}
+	#section3 .imgsContainer { 
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	/* Section 4
+	* --------------------------------------- */
+	#section4 img{
+		position:absolute;
+		left: 0 ;
+		top: 0 ;
+	}
+	#section4 .imgsContainer { 
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	/* Overwriting fullPage.js tooltip color
+	* --------------------------------------- */
+	.fp-tooltip{
+		color: #AAA;
+	}
+	#fp-nav span, .fp-slidesNav span{
+		border-color: #AAA;
+	}
+	#fp-nav li .active span, .fp-slidesNav .active span{
+		background: #AAA;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				'sectionsColor': ['#fff', '#fff', '#fff', '#fff','#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['Project Artichoke', 'About Us', 'Design Services', 'Project Management','Contact Us'],
+
+				
+
+				'onLeave': function(index, nextIndex, direction){
+					if (index == 3 && direction == 'down'){
+						$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+					}
+					else if(index == 3 && direction == 'up'){
+						$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+					}
+
+					$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+					$('#staticImg').toggleClass('moveDown', nextIndex == 4);
+					$('#staticImg').toggleClass('moveUp', index == 4 && direction == 'up');
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div id="staticImg">
+		<div class="imgsContainer">
+			
+		</div>
+	</div>
+
+	<!-- ------------------------------------------------------------------------------>
+	
+	<div class="section " id="section0">
+		<div class="imgsContainer">
+				<img src="backgrounds/1.jpg" alt="bkgd" id="bg1" />	
+		</div>
+			
+		<div id="card">
+	
+        	
+        	<div id="logo"><img src="im/logo_entry.png" width="218.5" height="73.5" alt="logo"></div>
+        		<div id="quickinfo">
+				<p> Project Artichoke is a boutique Landscape Design and Project Management business situated in Perth, Western Australia. Through a passion for the outdoors and contemporary design, we can tailor any landscaping project to suit your exact needs. </p>
+				<p></p> From residential homes to large commercial projects, the heart of our design comes from a multi-layered approach, providing our clients with a  professional but personal style.<p></p>
+				<p></p> Not only do we strive to create beautiful and inspiring outdoor spaces, but it is paramount that the client receives the finished landscape they imagined.<p></p>
+        		</div>
+        		
+      	</div>
+     
+		<div id="contactfooter">
+				<h2>Contact Us</h2>
+				<p2>admin@projectartichoke.com.au</p2>
+				<p2>+6141 795 1710</p2>
+		</div>
+		
+		
+		
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------>
+	
+	<div class="section" id="section1">
+		<div class="wrap">
+		
+			<div class="imgsContainer">
+				<img src="backgrounds/6.jpg" alt="bkgd" id="bg1" />	
+			</div>
+
+			<div id="bigcard">
+				<h2>About Us</h2>
+				<p>Project Artichoke was established in 2005, as Kerri Russell Garden Design. With a vision to integrate her designs with high quality construction, the business has evolved into Project Artichoke.</p>
+				<p>Based in Perth, Western Australia, we specialize primarily in residential design, but have the scope to look at anything from a simple planting layout to fully specified commercial designs.</p>
+				<p>Kerri focuses on delivering a boutique style service that encompasses value design, thorough detailing and individual attention.</p>
+				<p>From the consult, and right through the construction process, we will work with you and our trades to ensure we reach an outcome that surpasses all expectations.</p>
+				<p>With expertise and accredited qualifications in both Garden Design and Project Management, along with over 8 years experience as a Senior Landscape Designer for Tim Davies Landscaping, you can be sure that you are in professional hands.		</p>	
+			</div>
+			
+			<div id="contactfooter">
+				<h2>Contact Us</h2>
+				<p2>admin@projectartichoke.com.au</p2>
+				<p2>+6141 795 1710</p2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------>
+
+	<div class="section moveDown" id="section2">
+		<div class="wrap">
+		
+			<div class="imgsContainer">
+				<img src="backgrounds/5.jpg" alt="bkgd" id="bg1" />
+			</div>
+
+			<div id="bigcard">
+				<h2>Design Services</h2>
+				<p> 
+
+<h3>CONSULTATION</h3>
+
+<h4>$300 +gst</h4>
+
+<p>The initial consultation is an opportunity to assess the existing garden and talk through your ideas for change. We can discuss practicalities and problems such as changes in level and alternative ways of dealing with them, as well as how you use the garden and the style we feel will suit you, your house and the site.
+A preliminary Sketch Idea of the garden design together with the Fee Proposal are sent to you. This shows the proposed garden design and also serves as a discussion document allowing you a further opportunity for input if you decide to proceed further.
+</p>
+
+<h3>CONCEPT PLAN</h3>
+
+<h4>Starting from $1500 +gst</h4>
+<p>
+This is the second stage of the design process and is when we will turn the sketch idea, along with any changes you want to make, into a scaled cad drawing on the computer. We talk through any changes you may wish to make and clarify design details such as landscaping materials.
+This is a more accurate plan and will outline all the ideas involved, along with any elevations to help you visualise your new garden.
+</p>
+<h3>DETAIL PLANS</h3>
+<p>
+This is the third stage of the garden design process, incorporating any amendments agreed with you, showing all landscape details necessary for your contractor to be able to cost, set out and build the garden.
+</p>
+
+
+<h3>NOTE</h3>
+<p>
+An accurate survey of the existing garden is needed on which to base the new landscape design and if you don’t have one already, these can be obtained easily from your local council. If this plan is insufficient you will need to have the property surveyed. We can advise on companies that can help you with this.
+Local council approvals are required for some built works in your landscape. This can be taken care of by us, and will be noted in you initial fee proposal if required.
+We can provide a quotation for plant supply if you are undertaking the works yourself.
+We can cater for any stage of the Design Process, and although the above is a fairly good guide to the TYPICAL garden design, we are able to adapt to your particular needs. Please contact us to discuss your particular requirements. </p>
+</p>				
+				</div>
+			
+			<div id="contactfooter">
+				<h2>Contact Us</h2>
+				<p>admin@projectartichoke.com.au</p>
+				<p>+6141 795 1710</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------>
+	
+	<div class="section moveDown" id="section3">
+		<div class="wrap">
+			<div class="imgsContainer">
+				<img src="backgrounds/3.jpg" alt="bkgd" id="bg1" />
+			</div>
+
+			<div id="bigcard">
+				<h2>Project Management</h2>
+<p>
+Plans are all very well, but how do you get it built, exactly to the design you have just invested in?
+
+We source suitable contractors to create the garden for you, drawing from a pool of reliable craftspeople to ensure the best outcome. Then we supervise the work to ensure that everything goes smoothly and the garden is completed to a high standard.
+</p>			</div>
+			
+			<div id="contactfooter">
+				<h2>Contact Us</h2>
+				<p2>admin@projectartichoke.com.au</p2>
+				<p2>+6141 795 1710</p2>
+			</div>
+		</div>
+	</div>
+	<!-- ------------------------------------------------------------------------------>	
+		
+	<div class="section moveDown" id="section4">
+		<div class="wrap">
+			<div class="imgsContainer">
+				<img src="backgrounds/2.jpg" alt="bkgd" id="bg1" />
+			</div>
+
+			<div id="bigcard">
+				<h2>A powerful plugin</h2>
+				 <strong>fullPage.js</strong>  callbacks allow you to create amazing dynamic sites with a bit of imagination. This example tries to reproduce the Apple iPhone-5c website animations as an example of what fullPage.js is capable of.
+			</div>
+			
+			<div id="contactfooter">
+				<h2>Contact Us</h2>
+				<p2>admin@projectartichoke.com.au</p2>
+				<p2>+6141 795 1710</p2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------>
+	
+</div>
+
+</body>
+</html>
